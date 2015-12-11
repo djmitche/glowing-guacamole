@@ -1,0 +1,23 @@
+Unary_Op    ::=     -    |    !
+Binary_Op   ::=     +    |    -    |    *    |    /    |    %
+    |   =    |    <    |    >    |    <=    |    >=    |    <>
+    |   &    |    ' | '
+Expression  ::=     integer
+    |   variable
+    |   "string"
+    |   Unary_Op   Expression
+    |   Expression   Binary_Op   Expression
+    |   ( Expression )
+Command     ::=     REM string
+    |   GOTO integer
+    |   LET variable = Expression
+    |   PRINT Expression
+    |   INPUT variable
+    |   IF Expression THEN integer
+
+Line    ::=     integer Command
+
+Program     ::=     Line
+    |   Line Program
+
+Phrase  ::=     Line | RUN | LIST | END

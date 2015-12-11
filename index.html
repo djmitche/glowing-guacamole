@@ -1,0 +1,35 @@
+<html>
+
+<script src="lib/lexer.js"></script>
+<script src="lib/repl.js"></script>
+
+<style>
+.vbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.hbox {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+</style>
+
+<body class="hbox">
+    <div class="vbox">
+        <textarea id="input"></textarea>
+        <button onclick="processInput()">run</button>
+    </div>
+    <pre id="output"></pre>
+</body>
+
+
+</html>
