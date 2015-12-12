@@ -4,14 +4,24 @@
 <script src="lib/repl.js"></script>
 
 <style>
-.vbox {
-    display: flex;
-    flex-direction: row;
+* {
+    padding: 0;
+    margin: 0;
 }
 
 .hbox {
     display: flex;
+    flex-direction: row;
+}
+
+.vbox {
+    display: flex;
     flex-direction: column;
+}
+
+.hbox > *,
+.vbox > * {
+    flex: 1;
 }
 
 body {
@@ -21,12 +31,16 @@ body {
     height: 100%;
     width: 100%;
 }
+
+#output {
+    padding: 1em;
+}
 </style>
 
 <body class="hbox">
     <div class="vbox">
+        <button onclick="processInput()" style="flex: none;">Run</button>
         <textarea id="input"></textarea>
-        <button onclick="processInput()">run</button>
     </div>
     <pre id="output"></pre>
 </body>
